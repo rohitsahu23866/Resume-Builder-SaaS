@@ -1,0 +1,15 @@
+@import "tailwindcss";
+/* override Tailwind color function fallback */
+* {
+  --tw-bg-opacity: 1 !important;
+  --tw-text-opacity: 1 !important;
+}
+
+/* Fix unsupported oklch() color values */
+html {
+  color-scheme: light;
+  --tw-prose-body: #000;
+  --tw-prose-headings: #1f2937;
+  --tw-prose-lead: #4b5563;
+  --tw-prose-links: #3b82f6;
+}

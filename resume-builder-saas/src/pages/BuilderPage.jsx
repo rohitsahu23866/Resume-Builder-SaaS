@@ -5,6 +5,8 @@ import TemplateSwitcher from '../components/TemplateSwitcher';
 import html2pdf from 'html2pdf.js';
 
 export default function BuilderPage() {
+  const BACKEND_URL = 'https://resume-builder-saas.onrender.com';
+
   const printRef = useRef();
 
   const handleDownloadPDF = async () => {
@@ -21,7 +23,7 @@ export default function BuilderPage() {
   document.body.appendChild(toast);
 
   try {
-    const res = await fetch('http://localhost:5000/generate-pdf', {
+    const res = await fetch(`${BACKEND_URL}/generate-pdf`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ html, fileName: 'My_Resume' }),
